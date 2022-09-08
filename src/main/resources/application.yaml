@@ -1,0 +1,22 @@
+server:
+  servlet:
+    context-path: /management
+
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/management
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+      properties:
+        hibernate:
+          jdbc:
+            time_zone: UTC
+    show-sql: true
+
+
+

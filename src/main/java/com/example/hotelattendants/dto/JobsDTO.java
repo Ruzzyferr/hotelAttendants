@@ -9,6 +9,6 @@ public class JobsDTO {
 
     private String name;
 
-    private PersonnelNameDTO dto;
+    private PersonnelNameDTO manager;
 
 }

@@ -1,5 +1,8 @@
 package com.example.hotelattendants.dto;
 
+import lombok.Data;
+
+@Data
 public class PersonnelNameDTO {
 
     private int id;

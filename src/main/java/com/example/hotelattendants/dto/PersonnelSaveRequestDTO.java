@@ -15,6 +15,6 @@ public class PersonnelSaveRequestDTO {
 
     private Jobs jobs;
 
-    private Role role;
+    private String role;
 
 }

@@ -6,10 +6,7 @@ import com.example.hotelattendants.entity.Jobs;
 import com.example.hotelattendants.service.JobsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -22,6 +19,13 @@ public class JobsController {
     public ResponseEntity<JobsDTO> saveJobs(@RequestBody JobsSaveRequestDTO jobsSaveRequestDTO){
 
         return ResponseEntity.ok(jobsService.save(jobsSaveRequestDTO));
+
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<JobsDTO> getById(@PathVariable int id) {
+
+        return ResponseEntity.ok(jobsService.getById(id));
 
     }
 

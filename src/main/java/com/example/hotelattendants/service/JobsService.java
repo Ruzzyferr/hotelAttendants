@@ -8,6 +8,8 @@ import com.example.hotelattendants.repository.JobsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
+
 @Service
 @RequiredArgsConstructor
 public class JobsService {
@@ -21,6 +23,11 @@ public class JobsService {
         Jobs jobs = jobsMapper.toEntityFromSaveRequest(dto);
         jobsRepository.save(jobs);
 
+        return jobsMapper.toDto(jobs);
+    }
+
+    public JobsDTO getById(int id) {
+        Jobs jobs = jobsRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Not Found!"));
         return jobsMapper.toDto(jobs);
     }
 
